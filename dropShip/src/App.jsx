@@ -1,5 +1,5 @@
 import NavBar from "./components/layout/NavBar.jsx";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Men from "./pages/Men.jsx";
 import Women from "./pages/Women.jsx";
@@ -11,6 +11,7 @@ function App() {
     <div>
       <NavBar />
       <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/men" element={<Men />}></Route>
         <Route path="/women" element={<Women />}></Route>
