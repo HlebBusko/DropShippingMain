@@ -4,13 +4,15 @@ import menu from "../../assets/menu.svg";
 import bag from "../../assets/bag.svg";
 import person from "../../assets/person.svg";
 import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const links = [
-    { title: "Men", id: uuidv4() },
-    { title: "Women", id: uuidv4() },
-    { title: "Kids", id: uuidv4() },
-    { title: "Equipment", id: uuidv4() },
+    { title: "Home", id: uuidv4(), route: "home" },
+    { title: "Men", id: uuidv4(), route: "men" },
+    { title: "Women", id: uuidv4(), route: "women" },
+    { title: "Kids", id: uuidv4(), route: "kids" },
+    { title: "Equipment", id: uuidv4(), route: "equipment " },
   ];
 
   return (
@@ -29,7 +31,7 @@ function NavBar() {
         <ul className="flex gap-2">
           {links.map((link) => (
             <li className="cursor-pointer" key={link.id}>
-              {link.title}
+              <Link to={`/${link.route}`}>{link.title}</Link>
             </li>
           ))}
         </ul>
