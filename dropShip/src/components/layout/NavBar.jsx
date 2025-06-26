@@ -16,7 +16,7 @@ function NavBar() {
   ];
 
   return (
-    <nav className="flex items-center">
+    <nav className="flex items-center fixed top-0 left-0 bg-white w-full shadow">
       {/* left section */}
       <div className="mr-auto">
         <div className="w-28">

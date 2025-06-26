@@ -2,10 +2,10 @@ import images from "./images.js";
 import { v4 as uuidv4 } from "uuid";
 const products = [
   {
-    title: `Men's Swim Brief Arena Mushrooms`,
+    title: `Men's Swim Brief Arena New Monogram`,
     price: 40.99,
     id: uuidv4(),
-    image: images["/src/assets/productImages/briefsShrooms.png"].default,
+    image: images["/src/assets/productImages/briefsMonogram.png"].default,
     category: "men",
   },
   {
@@ -37,10 +37,10 @@ const products = [
     category: "men",
   },
   {
-    title: `Men's Swim Brief Arena Piping Blue`,
+    title: `Men's Swim Brief Arena Belize`,
     price: 40.99,
     id: uuidv4(),
-    image: images["/src/assets/productImages/briefsBlue.png"].default,
+    image: images["/src/assets/productImages/briefsBelize.png"].default,
     category: "men",
   },
   {
