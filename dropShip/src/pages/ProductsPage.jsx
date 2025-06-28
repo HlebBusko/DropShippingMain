@@ -2,7 +2,7 @@ import ProductCard from "../components/ui/productCard.jsx";
 import products from "../data/Products.js";
 import { useParams } from "react-router-dom";
 
-function Men() {
+function ProductsPage() {
   const { category } = useParams();
 
   const filteredProducts = products.filter(
@@ -23,4 +23,4 @@ function Men() {
   );
 }
 
-export default Men;
+export default ProductsPage;

@@ -5,6 +5,7 @@ import person from "../../assets/person.svg";
 import { v4 as uuidv4 } from "uuid";
 import { NavLink } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import NavItem from "../ui/NavLink.jsx";
 
 function NavBar() {
   const [isDroppedDown, setIsDroppedDown] = useState(false);
@@ -49,20 +50,17 @@ function NavBar() {
         <div className="flex h-full flex-row">
           <ul className="sm:flex h-full flex-row hidden ">
             {links.map((link) => (
-              <NavLink
-                key={link.id}
-                end={!link.route}
+              <NavItem
                 className={({ isActive }) =>
-                  `px-2 hover:text-blue-500 w-full bg-white h-full flex items-center h-12 ${
+                  `px-2 lg:px-4 hover:text-blue-500 w-full bg-white h-full flex items-center h-12 ${
                     isActive
                       ? "underline underline-offset-16 text-blue-500"
                       : ""
                   }`
                 }
-                to={link.route ? `/products/${link.route}` : "/"}
-              >
-                {link.title}
-              </NavLink>
+                key={link.id}
+                link={link}
+              ></NavItem>
             ))}
           </ul>
         </div>
@@ -85,19 +83,16 @@ function NavBar() {
         } transition-all ease-in-out duration-700`}
       >
         {links.map((link) => (
-          <NavLink
-            onClick={handleDropDown}
-            end={!link.route}
+          <NavItem
             className={({ isActive }) =>
               `flex flex-col w-full justify-center items-center py-2 hover:bg-blue-500 hover:text-white ${
                 isActive ? "bg-blue-500 text-white" : ""
               }`
             }
+            link={link}
             key={link.id}
-            to={link.route ? `/products/${link.route}` : "/"}
-          >
-            {link.title}
-          </NavLink>
+            onClick={handleDropDown}
+          ></NavItem>
         ))}
       </div>
     </div>
