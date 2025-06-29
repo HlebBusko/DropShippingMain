@@ -4,12 +4,14 @@ import bag from "../../assets/bag.svg";
 import person from "../../assets/person.svg";
 import { v4 as uuidv4 } from "uuid";
 import { NavLink } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext.jsx";
 import NavItem from "../ui/NavLink.jsx";
 
 function NavBar() {
   const [isDroppedDown, setIsDroppedDown] = useState(false);
   const dropDownRef = useRef(null);
+  const { cartQuantity } = useContext(CartContext);
   function handleDropDown() {
     setIsDroppedDown((prev) => !prev);
   }
@@ -72,7 +74,12 @@ function NavBar() {
 
           <img className="w-8" src={person} alt="" />
 
-          <img className="w-8" src={bag} alt="" />
+          <div className="relative">
+            <img className="w-8" src={bag} alt="" />
+            <div className="text-xs font-bold absolute top-4 right-3 bg-red-600 w-6 h-6 text-white flex justify-center items-center rounded-[50%]">
+              {cartQuantity}
+            </div>
+          </div>
         </div>
       </nav>
       {/* Phone version of dropdown menu */}
