@@ -74,12 +74,14 @@ function NavBar() {
 
           <img className="w-8" src={person} alt="" />
 
-          <div className="relative">
+          <NavLink to="/cart" className="relative">
             <img className="w-8" src={bag} alt="" />
-            <div className="text-xs font-bold absolute top-4 right-3 bg-red-600 w-6 h-6 text-white flex justify-center items-center rounded-[50%]">
-              {cartQuantity}
-            </div>
-          </div>
+            {cartQuantity > 0 && (
+              <div className="text-xs font-bold absolute top-4 right-3 bg-red-600 w-6 h-6 text-white flex justify-center items-center rounded-[50%]">
+                {cartQuantity}
+              </div>
+            )}
+          </NavLink>
         </div>
       </nav>
       {/* Phone version of dropdown menu */}
