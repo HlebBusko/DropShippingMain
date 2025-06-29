@@ -1,7 +1,7 @@
-function ProductCard({ product }) {
+function ProductCard({ product, onClick }) {
   return (
     <div className="flex items-center justify-center">
-      <div key={product.id}>
+      <div>
         <div className="w-full h-full">
           <img
             src={product.image}
@@ -11,8 +11,13 @@ function ProductCard({ product }) {
         </div>
         <div className="h-12">{product.title}</div>
         <div>{product.price} &euro;</div>
-        <div>
-          <button className="border">Add to cart</button>
+        <div className="w-full">
+          <button
+            onClick={onClick}
+            className="w-full bg-blue-400 text-white py-1 rounded-lg hover:bg-blue-300 cursor-pointer"
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
