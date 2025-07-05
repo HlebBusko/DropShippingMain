@@ -22,6 +22,31 @@ function CartProvider({ children }) {
     }
   }
 
+  function removeFromCart(item) {
+    setCart(cart.filter((product) => item.id !== product.id));
+    console.log(cart);
+  }
+
+  function increaseQuantity(item) {
+    setCart(
+      cart.map((product) =>
+        product.id === item.id
+          ? { ...product, quantity: product.quantity + 1 }
+          : product
+      )
+    );
+  }
+
+  function decreaseQuantity(item) {
+    setCart(
+      cart.map((product) =>
+        item.id === product.id && product.quantity > 1
+          ? { ...product, quantity: product.quantity - 1 }
+          : product
+      )
+    );
+  }
+
   useEffect(() => {
     console.log(cart);
     console.log(cart.length);
@@ -31,7 +56,16 @@ function CartProvider({ children }) {
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, cartQuantity }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        cartQuantity,
+        removeFromCart,
+        increaseQuantity,
+        decreaseQuantity,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
