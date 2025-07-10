@@ -3,6 +3,7 @@ import checkmark from "../assets/checkmark.svg";
 import { useEffect, useState } from "react";
 import CheckOutButton from "../components/ui/CheckoutButton.jsx";
 import InputField from "../components/ui/InputField.jsx";
+import { NavLink } from "react-router-dom";
 
 const loginFields = [
   {
@@ -63,8 +64,9 @@ function Login() {
           <div className="flex flex-col gap-1">
             {loginFields.map((field) => (
               <InputField
+                key={field.id}
                 field={field}
-                loginData={loginData}
+                errorData={loginData}
                 onChange={(e) => handleLoginValue(e)}
               ></InputField>
             ))}
@@ -110,9 +112,12 @@ function Login() {
       </div>
       <div className="flex items-center flex-col gap-4 mt-4">
         <div className="font-semibold text-lg">NOT REGISTERED YET?</div>
-        <CheckOutButton className={`w-86 shadow-lg`}>
+        <NavLink
+          to="/register"
+          className={`w-86 shadow-lg bg-blue-500 py-4 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-600 text-center`}
+        >
           Register now
-        </CheckOutButton>
+        </NavLink>
       </div>
       <div className="flex flex-col items-center mt-4">
         <h1 className="text-lg font-semibold mb-2">What are the benefits?</h1>
