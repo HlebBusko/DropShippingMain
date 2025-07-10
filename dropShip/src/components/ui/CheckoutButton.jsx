@@ -1,9 +1,11 @@
-function CheckOutButton({ className }) {
+function CheckOutButton({ className, children, onClick, type }) {
   return (
     <button
-      className={`${className} w-full bg-blue-500 py-3 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-400`}
+      className={`${className} bg-blue-500 py-4 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-600`}
+      onClick={onClick}
+      type={type}
     >
-      Continue to checkout
+      {children}
     </button>
   );
 }

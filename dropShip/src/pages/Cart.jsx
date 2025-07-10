@@ -10,7 +10,9 @@ function Cart() {
   return (
     <div className="pb-12 lg:pb-0">
       <div className="lg:hidden fixed bottom-0 bg-white shadow w-full px-4 py-3">
-        <CheckOutButton></CheckOutButton>
+        <CheckOutButton className={`w-full`}>
+          Continue to checkout
+        </CheckOutButton>
       </div>
       <div className="pt-20 grid grid-cols-1 lg:grid-cols-[2fr_1fr] px-4 gap-6 lg:gap-0 pb-6">
         {/* Items grid */}
@@ -24,7 +26,9 @@ function Cart() {
         <div className="">
           <div className="text-center font-bold text-xl mb-4">SUMMARY</div>
           <CartSummary></CartSummary>
-          <CheckOutButton className={`hidden lg:block mt-2`}></CheckOutButton>
+          <CheckOutButton className={`w-full hidden lg:block mt-2`}>
+            Continue to checkout
+          </CheckOutButton>
         </div>
       </div>
     </div>

@@ -48,8 +48,6 @@ function CartProvider({ children }) {
   }
 
   useEffect(() => {
-    console.log(cart);
-    console.log(cart.length);
     const total = cart.reduce((acc, item) => acc + item.quantity, 0);
     setCartQuantity(total);
     localStorage.setItem("cart", JSON.stringify(cart));

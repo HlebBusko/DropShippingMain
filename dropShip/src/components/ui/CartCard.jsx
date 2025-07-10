@@ -1,14 +1,12 @@
 import bin from "../../assets/bin.svg";
 import plus from "../../assets/plus.svg";
 import minus from "../../assets/minus.svg";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 function CartCard({ item }) {
   const { removeFromCart, increaseQuantity, decreaseQuantity } =
     useContext(CartContext);
-
-  useEffect(() => {}, []);
 
   return (
     <div className="flex flex-col justify-center">
@@ -31,7 +29,7 @@ function CartCard({ item }) {
           <div className="hidden lg:flex mb-auto text-lg">
             <div className="font-bold">{item.title}</div>
           </div>
-          {/*  */}
+          {/* Adjust quantity */}
           <div className="flex gap-2 items-center">
             <button
               onClick={() => decreaseQuantity(item)}
@@ -47,9 +45,19 @@ function CartCard({ item }) {
               <img src={plus} alt="" />
             </button>
           </div>
-          {/*  */}
-          <div className="">
-            &euro; {(item.price * item.quantity).toFixed(2)}
+          {/* Price */}
+          <div className="flex flex-col gap-2">
+            {item.quantity > 1 ? (
+              <div>
+                {item.quantity} * {item.price} &euro;
+              </div>
+            ) : (
+              <div>{item.price} &euro;</div>
+            )}
+
+            {item.quantity > 1 && (
+              <div>{(item.quantity * item.price).toFixed(2)} &euro;</div>
+            )}
           </div>
 
           <button
