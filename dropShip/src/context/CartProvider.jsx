@@ -2,6 +2,7 @@ import { CartContext } from "./CartContext.jsx";
 import { useState, useEffect } from "react";
 
 function CartProvider({ children }) {
+  const [displayConfirm, setDisplayConfirm] = useState({});
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
@@ -20,6 +21,16 @@ function CartProvider({ children }) {
     } else {
       setCart((prev) => [...prev, { ...product, quantity: 1 }]);
     }
+
+    setDisplayConfirm((prev) => ({ ...prev, [product.id]: true }));
+
+    setTimeout(() => {
+      setDisplayConfirm((prev) => {
+        const updated = { ...prev };
+        delete updated[product.id];
+        return updated;
+      });
+    }, 3000);
   }
 
   function removeFromCart(item) {
@@ -62,6 +73,7 @@ function CartProvider({ children }) {
         removeFromCart,
         increaseQuantity,
         decreaseQuantity,
+        displayConfirm,
       }}
     >
       {children}

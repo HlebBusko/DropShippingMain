@@ -11,12 +11,14 @@ const loginFields = [
     name: "email",
     id: uuidv4(),
     placeholder: "Your email adress *",
+    type: "text",
   },
   {
     title: "Password",
     name: "password",
     id: uuidv4(),
     placeholder: "Passwrod *",
+    type: "password",
   },
 ];
 

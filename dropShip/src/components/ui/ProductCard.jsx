@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import checkmarkAdded from "../../assets/checkmark-added.svg";
 
 function ProductCard({ product }) {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, displayConfirm } = useContext(CartContext);
   return (
     <div className="flex items-center justify-center">
       <div>
@@ -15,10 +16,16 @@ function ProductCard({ product }) {
         </div>
         <div className="h-12">{product.title}</div>
         <div>{product.price} &euro;</div>
-        <div className="w-full">
+        <div className="h-14 flex flex-col">
+          {displayConfirm[product.id] && (
+            <div className={`flex `}>
+              <img src={checkmarkAdded} alt="" />
+              <div className="text-green-500">Added to cart</div>
+            </div>
+          )}
           <button
             onClick={() => addToCart(product)}
-            className="w-full bg-blue-400 text-white py-1 rounded-lg hover:bg-blue-300 cursor-pointer"
+            className="w-full bg-blue-400 text-white py-1 rounded-lg hover:bg-blue-300 cursor-pointer mt-auto"
           >
             Add to cart
           </button>
