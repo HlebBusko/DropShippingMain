@@ -10,7 +10,7 @@ function InputField({ field, errorData, onChange }) {
     setVisibility((prev) => !prev);
   }
   return (
-    <div key={field.id} className="flex flex-col gap-1 h-21 relative">
+    <div key={field.id} className="flex flex-col h-21 relative">
       <input
         className={` p-4 shadow border-1 focus:border-1 w-86 rounded-lg focus:bg-blue-100 focus:outline-blue-800 ${
           errorData.errors[field.name]

@@ -38,7 +38,7 @@ function NavBar() {
     };
   }, [isDroppedDown]);
   return (
-    <div ref={dropDownRef}>
+    <div className="" ref={dropDownRef}>
       <nav className="flex items-center fixed top-0 left-0 bg-white w-full shadow h-16 z-40 pr-4 pl-1">
         {/* left section */}
         <div className="mr-auto">
@@ -88,7 +88,7 @@ function NavBar() {
       {/* Phone version of dropdown menu */}
 
       <div
-        className={`fixed top-0 w-full bg-white shadow-lg ${
+        className={`fixed z-30 top-0 w-full bg-white shadow-lg ${
           isDroppedDown ? "translate-y-16" : "-translate-y-60"
         } transition-all ease-in-out duration-700`}
       >
