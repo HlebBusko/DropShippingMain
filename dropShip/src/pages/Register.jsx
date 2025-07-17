@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import InputField from "../components/ui/InputField.jsx";
 import { v4 as uuidv4 } from "uuid";
 import CheckOutButton from "../components/ui/CheckoutButton.jsx";
+import checkmarkGreen from "../assets/checkmarkGreen.svg";
 
 const registerFields = [
   {
@@ -133,9 +134,13 @@ function Register() {
         ))}
       </div>
       <div>
-        <div className={`w-86 text-left ${isSubmitted ? "block" : "hidden"}`}>
-          Succesfully submitted
+        <div className={`min-h-6 w-86 text-left text-green-500`}>
+          <div className={`flex gap-1 ${isSubmitted ? "block" : "hidden"}`}>
+            <img src={checkmarkGreen} alt="" />
+            <div>Succesfully submitted</div>
+          </div>
         </div>
+
         <CheckOutButton onClick={(e) => handleSubmit(e)} className={`w-87`}>
           Create an account
         </CheckOutButton>
