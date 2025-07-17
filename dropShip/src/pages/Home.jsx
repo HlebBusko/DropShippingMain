@@ -1,10 +1,11 @@
 import heroPhoto from "../assets/heroPhoto.avif";
 import heroDesktop from "../assets/heroDesktop.avif";
 import heroMobile from "../assets/heroMobile.avif";
+import HomeButton from "../components/ui/HomeButton";
 
 function Home() {
   return (
-    <section className="mt-16">
+    <section className="mt-16 pb-20">
       <div className="absolute z-30 top-40 left-15 hidden sm:block">
         <h1 className="text-5xl mb-6 text-white font-semibold">
           Catch the Wave
@@ -12,9 +13,7 @@ function Home() {
         <div className="text-white mb-6 font-semibold ">
           Comfortable briefs, cute swimwear, tighties race shorts
         </div>
-        <button className="py-3 px-8 rounded-3xl bg-red-500 text-white cursor-pointer hover:text-red-500 hover:bg-white">
-          Shop Now
-        </button>
+        <HomeButton>Shop Now</HomeButton>
       </div>
 
       <picture className="relative">
@@ -27,9 +26,7 @@ function Home() {
         <div className="mb-8">
           Comfortable briefs, cute swimwear, tighties race shorts
         </div>
-        <button className="py-3 px-8 rounded-3xl bg-red-500 text-white cursor-pointer hover:text-red-500 hover:bg-white">
-          Shop Now
-        </button>
+        <HomeButton>Shop Now</HomeButton>
       </div>
     </section>
   );
