@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import checkmarkAdded from "../../assets/checkmark-added.svg";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   const { addToCart, displayConfirm } = useContext(CartContext);
   return (
-    <div className="flex items-center justify-center">
+    <Link className="flex items-center justify-center">
       <div>
         <div className="w-full h-full">
           <img
@@ -31,7 +32,7 @@ function ProductCard({ product }) {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

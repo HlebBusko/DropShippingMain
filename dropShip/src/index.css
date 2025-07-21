@@ -11,3 +11,26 @@ body{
   @apply font-bold z-10 hover:text-black;
   transform: translateY(-50%);
 }
+
+.swiper-pagination { 
+  position: absolute !important;
+  bottom: 0.25rem; 
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+.custom-bullet {
+  background: gray;
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+  opacity: 80;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.custom-bullet-active {
+ background-color: white;
+ opacity: 100;
+}

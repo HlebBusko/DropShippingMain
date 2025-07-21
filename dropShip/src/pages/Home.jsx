@@ -3,11 +3,22 @@ import heroDesktop from "../assets/heroDesktop.avif";
 import heroMobile from "../assets/heroMobile.avif";
 import HomeButton from "../components/ui/HomeButton.jsx";
 import HomeSlider from "../components/ui/HomeSlider.jsx";
+import StickerSwiper from "../components/ui/StickerSwiper.jsx";
+import checkmark from "../assets/checkmark.svg";
+import mail from "../assets/mail.svg";
+import lorry from "../assets/lorry.svg";
 
 function Home() {
+  const swiperFields = [
+    { title: "Free delivery on orders over €60", img: lorry },
+    { title: "Free returns within the EU", img: checkmark },
+    { title: "10% off if signed up", img: mail },
+  ];
   return (
     <section className="mt-16 pb-20">
-      <div className="absolute z-30 top-40 left-15 hidden sm:block">
+      <StickerSwiper swiperFields={swiperFields}></StickerSwiper>
+
+      <div className="absolute z-30 top-55 left-15 hidden sm:block">
         <h1 className="text-5xl mb-6 text-white font-semibold">
           Catch the Wave
         </h1>
