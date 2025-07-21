@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 function ProductCard({ product }) {
   const { addToCart, displayConfirm } = useContext(CartContext);
   return (
-    <Link className="flex items-center justify-center">
+    <Link
+      to={`/products/details/${product.id}`}
+      className="flex items-center justify-center"
+    >
       <div>
         <div className="w-full h-full">
           <img
