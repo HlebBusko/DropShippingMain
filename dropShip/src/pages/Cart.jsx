@@ -8,7 +8,7 @@ function Cart() {
   const { cart } = useContext(CartContext);
 
   return (
-    <div className="pb-12 lg:pb-0">
+    <div className="pb-16 lg:pb-0">
       <div className="lg:hidden fixed bottom-0 bg-white shadow w-full px-4 py-3">
         <CheckOutButton className={`w-full`}>
           Continue to checkout

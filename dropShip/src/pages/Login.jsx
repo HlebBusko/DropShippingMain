@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import checkmark from "../assets/checkmark.svg";
 import checkStrong from "../assets/checkStrong.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CheckOutButton from "../components/ui/CheckoutButton.jsx";
 import InputField from "../components/ui/InputField.jsx";
 import { NavLink } from "react-router-dom";
@@ -18,7 +18,7 @@ const loginFields = [
     title: "Password",
     name: "password",
     id: uuidv4(),
-    placeholder: "Passwrod *",
+    placeholder: "Password *",
     type: "password",
   },
 ];
@@ -31,10 +31,10 @@ function Login() {
   });
 
   const benefits = [
-    { title: "Check out faster", id: uuidv4() },
-    { title: "Manage orders more easily", id: uuidv4() },
-    { title: "View past orders", id: uuidv4() },
-    { title: "Store multiple addresses", id: uuidv4() },
+    "Check out faster",
+    "Manage orders more easily",
+    "View past orders",
+    "Store multiple addresses",
   ];
 
   function handleLoginValue(e) {
@@ -53,18 +53,14 @@ function Login() {
     e.preventDefault();
     const newLoginErrors = {};
 
-    if (!loginData.email) {
+    if (!loginData.fields.email) {
       newLoginErrors.email = true;
     }
-    if (!loginData.password) {
+    if (!loginData.fields.password) {
       newLoginErrors.password = true;
     }
     setLoginData((prev) => ({ ...prev, errors: newLoginErrors }));
   }
-
-  useEffect(() => {
-    console.log(loginData);
-  }, [loginData]);
 
   return (
     <form>
@@ -133,10 +129,10 @@ function Login() {
               What are the benefits?
             </h1>
             <ul className="flex flex-col gap-2 w-full">
-              {benefits.map((benefit) => (
-                <li className="flex gap-2 w-full" key={benefit.id}>
+              {benefits.map((benefit, i) => (
+                <li className="flex gap-2 w-full" key={i}>
                   <img src={checkStrong} alt="" />
-                  <div>{benefit.title}</div>
+                  <div>{benefit}</div>
                 </li>
               ))}
             </ul>

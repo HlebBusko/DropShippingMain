@@ -6,7 +6,6 @@ import exclamation from "../../assets/exclamation.svg";
 import questionMark from "../../assets/questionMark.svg";
 import plane from "../../assets/plane.svg";
 import { v4 as uuidv4 } from "uuid";
-import { NavLink } from "react-router-dom";
 import NavItem from "../ui/NavLink.jsx";
 
 function Footer() {
