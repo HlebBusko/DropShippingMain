@@ -7,6 +7,7 @@ const products = [
     id: uuidv4(),
     image: images["/src/assets/productImages/briefsMonogram.png"].default,
     category: "men",
+    new: true,
   },
   {
     title: `Men's Swim Brief Arena Olives`,
@@ -28,6 +29,7 @@ const products = [
     id: uuidv4(),
     image: images["/src/assets/productImages/briefsWhite.png"].default,
     category: "men",
+    new: true,
   },
   {
     title: `Men's Swim Brief Arena Evo Pink`,
@@ -70,6 +72,7 @@ const products = [
     id: uuidv4(),
     image: images["/src/assets/productImages/suitDonuts.png"].default,
     category: "women",
+    new: true,
   },
   {
     title: `Women's Swimsuit Arena Green Water`,
@@ -77,6 +80,7 @@ const products = [
     id: uuidv4(),
     image: images["/src/assets/productImages/suitGreenWater.png"].default,
     category: "women",
+    new: true,
   },
   {
     title: `Women's Swimsuit Arena Team Energy`,
@@ -91,6 +95,7 @@ const products = [
     id: uuidv4(),
     image: images["/src/assets/productImages/suitGoldLeaves.png"].default,
     category: "women",
+    new: true,
   },
   {
     title: `Boys' Team Swim Brief Solid`,
@@ -112,6 +117,7 @@ const products = [
     id: uuidv4(),
     image: images["/src/assets/productImages/goggles1.png"].default,
     category: "equipment",
+    new: true,
   },
   {
     title: `Cobra Edge Swipe Mirror Goggles`,

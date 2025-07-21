@@ -5,3 +5,9 @@
 body{
   font-family: 'Inter', sans-serif;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply font-bold z-10 hover:text-black;
+  transform: translateY(-50%);
+}

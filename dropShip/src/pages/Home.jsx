@@ -1,7 +1,8 @@
 import heroPhoto from "../assets/heroPhoto.avif";
 import heroDesktop from "../assets/heroDesktop.avif";
 import heroMobile from "../assets/heroMobile.avif";
-import HomeButton from "../components/ui/HomeButton";
+import HomeButton from "../components/ui/HomeButton.jsx";
+import HomeSlider from "../components/ui/HomeSlider.jsx";
 
 function Home() {
   return (
@@ -27,6 +28,12 @@ function Home() {
           Comfortable briefs, cute swimwear, tighties race shorts
         </div>
         <HomeButton>Shop Now</HomeButton>
+      </div>
+      <div className="mt-4">
+        <h1 className="font-semibold text-4xl text-blue-500 text-center mb-2">
+          New Arrivals
+        </h1>
+        <HomeSlider></HomeSlider>
       </div>
     </section>
   );
