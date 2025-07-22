@@ -13,7 +13,11 @@ function ProductCard({ product }) {
     >
       <div>
         <div className="w-full h-full">
-          <img src={mainImage} className="w-full h-full max-w-[316px]" alt="" />
+          <img
+            src={mainImage}
+            className="w-full h-full max-w-[316px]"
+            alt="Product Image"
+          />
         </div>
         <div className="h-12">{product.title}</div>
         <div>{product.price} &euro;</div>

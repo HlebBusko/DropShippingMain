@@ -43,7 +43,7 @@ const products = [
   },
   {
     title: `Men's Swim Brief Arena Logotype`,
-    price: 40.99,
+    price: Number(40.99),
     id: "b6d7a4f0-fa2b-4fa2-9f25-16e05f77c23f",
     images: [
       images["/src/assets/productImages/briefsWhite.png"].default,

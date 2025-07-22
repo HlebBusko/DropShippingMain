@@ -13,7 +13,6 @@ function CartSummary() {
     { title: "Subtotal", price: subtotal, id: uuidv4() },
     {
       title: "Shipping cost",
-      hr: true,
       free: true,
       price: shipping,
       id: uuidv4(),
@@ -25,7 +24,14 @@ function CartSummary() {
       {fields.map((field) => (
         <div key={field.id}>
           <CartField field={field}></CartField>
-          {field.hr && <hr className="mt-2" />}
+          {field.price === shipping && (
+            <div>
+              <div className="text-gray-400 text-xs mb-2">
+                * Free delivery on orders over &euro; 60
+              </div>
+              <hr />
+            </div>
+          )}
         </div>
       ))}
     </div>
