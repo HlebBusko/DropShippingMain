@@ -12,13 +12,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Navigation, Pagination } from "swiper/modules";
+import SizeBox from "../components/ui/sizeBox.jsx";
 
 function ProductDetails() {
   const { id } = useParams();
 
   const { addToCart } = useContext(CartContext);
 
-  const sizes = [70, 75, 80, 85, 90, 95, 100];
+  const menSizes = [70, 75, 80, 85, 90, 95, 100];
+  const womenSizes = [30, 32, 34, 36, 38, 40, 42];
+  const kidsSizes = ["2-3", "4-5", "6-7", "8-9", "9-10"];
+  const equipmentSize = ["Fits all sizes"];
 
   if (!products || products.length === 0) {
     return <div>Loading products...</div>;
@@ -72,14 +76,14 @@ function ProductDetails() {
           <h2 className="font-semibold">Sizes:</h2>
           <div className="flex flex-wrap gap-2">
             {" "}
-            {sizes.map((size, i) => (
-              <div
-                key={i}
-                className="hover:border-black border-2 border-transparent py-2 min-w-16 text-center cursor-pointer bg-gray-100 hover:shadow-[inset_0_0_0_3px_white]"
-              >
-                {size}
-              </div>
-            ))}
+            {clickedProduct.category === "men" &&
+              menSizes.map((size, i) => <SizeBox key={i}>{size}</SizeBox>)}
+            {clickedProduct.category === "women" &&
+              womenSizes.map((size, i) => <SizeBox key={i}>{size}</SizeBox>)}
+            {clickedProduct.category === "kids" &&
+              kidsSizes.map((size, i) => <SizeBox key={i}>{size}</SizeBox>)}
+            {clickedProduct.category === "equipment" &&
+              equipmentSize.map((size, i) => <SizeBox key={i}>{size}</SizeBox>)}
           </div>
           <h2 className="text-sm">
             Our sizes are based on FRENCH (F) sizing system

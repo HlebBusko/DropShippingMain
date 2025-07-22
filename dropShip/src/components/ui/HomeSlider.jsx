@@ -7,6 +7,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext.jsx";
+import { Link } from "react-router-dom";
 
 function HomeSlider() {
   const { products } = useContext(ProductsContext);
@@ -38,7 +39,10 @@ function HomeSlider() {
       >
         {newProducts.map((product) => (
           <SwiperSlide key={product.id} className="flex flex-col items-center">
-            <div className="pb-12 flex flex-col gap-2">
+            <Link
+              to={`/products/details/${product.id}`}
+              className="pb-12 flex flex-col gap-2"
+            >
               <img
                 src={product.images[0]}
                 alt=""
@@ -48,7 +52,7 @@ function HomeSlider() {
               <h1>{product.title}</h1>
               <div className="font-bold text-blue-500">New</div>
               <div className="mt-auto">&euro;{product.price}</div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

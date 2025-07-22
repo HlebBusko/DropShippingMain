@@ -25,7 +25,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="mt-auto ">
+    <footer className="mt-10">
       <hr />
       {/* First section */}
       <div className="grid sm:grid-cols-2 sm:px-8 px-4 sm:gap-8 gap-4 py-6">

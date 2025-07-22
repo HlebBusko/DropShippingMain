@@ -3,6 +3,7 @@ import plus from "../../assets/plus.svg";
 import minus from "../../assets/minus.svg";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import minusGray from "../../assets/minusGray.svg";
 
 function CartCard({ item }) {
   const { removeFromCart, increaseQuantity, decreaseQuantity } =
@@ -16,7 +17,7 @@ function CartCard({ item }) {
           onClick={() => removeFromCart(item)}
           className="ml-auto lg:hidden cursor-pointer"
         >
-          <img className="w-8" src={bin} alt="" />
+          <img className="w-8" src={bin} alt="Delete Product" />
         </button>
       </div>
       {/*  */}
@@ -35,14 +36,18 @@ function CartCard({ item }) {
               onClick={() => decreaseQuantity(item)}
               className="flex justify-center items-center w-8 h-8 border rounded-lg cursor-pointer"
             >
-              <img src={minus} alt="" />
+              {item.quantity > 1 ? (
+                <img src={minus} alt="Decrease quantity" />
+              ) : (
+                <img src={minusGray} alt="Disabled decrease quantity"></img>
+              )}
             </button>
             <div className="text-xl">{item.quantity}</div>
             <button
               onClick={() => increaseQuantity(item)}
               className="flex justify-center items-center w-8 h-8 border rounded-lg cursor-pointer"
             >
-              <img src={plus} alt="" />
+              <img src={plus} alt="Increase quantity" />
             </button>
           </div>
           {/* Price */}
