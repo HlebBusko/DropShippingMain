@@ -16,7 +16,6 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        http://localhost:5174/products/details/http://localhost:5174/products/details/2b9ac880-a4dc-4817-9e11-37b2a01989982b9ac880-a4dc-4817-9e11-37b2a0198998
         <Route path="/products/:category" element={<ProductsPage />}></Route>
         <Route
           path="/products/details/:id"

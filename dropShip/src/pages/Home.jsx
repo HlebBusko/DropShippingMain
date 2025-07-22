@@ -14,6 +14,7 @@ function Home() {
     { title: "Free returns within the EU", img: checkmark },
     { title: "10% off if signed up", img: mail },
   ];
+
   return (
     <section className="mt-16 pb-20">
       <StickerSwiper swiperFields={swiperFields}></StickerSwiper>

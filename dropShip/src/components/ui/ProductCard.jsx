@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   const { addToCart, displayConfirm } = useContext(CartContext);
+  const mainImage = product.images[0];
   return (
     <Link
       to={`/products/details/${product.id}`}
@@ -12,11 +13,7 @@ function ProductCard({ product }) {
     >
       <div>
         <div className="w-full h-full">
-          <img
-            src={product.image}
-            className="w-full h-full max-w-[316px]"
-            alt=""
-          />
+          <img src={mainImage} className="w-full h-full max-w-[316px]" alt="" />
         </div>
         <div className="h-12">{product.title}</div>
         <div>{product.price} &euro;</div>
@@ -28,7 +25,11 @@ function ProductCard({ product }) {
             </div>
           )}
           <button
-            onClick={() => addToCart(product)}
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              addToCart(product);
+            }}
             className="w-full bg-blue-400 text-white py-1 rounded-lg hover:bg-blue-300 cursor-pointer mt-auto"
           >
             Add to cart
