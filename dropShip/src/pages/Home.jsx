@@ -34,7 +34,7 @@ function Home() {
         <source media="(min-width:640px)" srcSet={heroPhoto} />
         <img className="z-0" src={heroMobile} alt="Hero" />
       </picture>
-      <div className="sm:hidden flex flex-col items-center mt-2">
+      <div className="sm:hidden flex flex-col items-center mt-2 px-4">
         <div className="text-5xl mb-6 ">Catch the Wave</div>
         <div className="mb-8">
           Comfortable briefs, cute swimwear, tighties race shorts

@@ -36,15 +36,15 @@ function ProductDetails() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (!products || products.length === 0) {
-    return <div>Loading products...</div>;
-  }
-  const clickedProduct = products.find((product) => id === product.id);
-
   function handleAddToCart() {
     addToCart(clickedProduct);
     toast.success("Product added to cart!");
   }
+
+  if (!products || products.length === 0) {
+    return <div>Loading products...</div>;
+  }
+  const clickedProduct = products.find((product) => id === product.id);
 
   return (
     <div className="pt-20 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-6">

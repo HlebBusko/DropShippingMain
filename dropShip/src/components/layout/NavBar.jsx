@@ -38,12 +38,12 @@ function NavBar() {
     };
   }, [isDroppedDown]);
   return (
-    <div className="" ref={dropDownRef}>
+    <div ref={dropDownRef}>
       <nav className="flex items-center fixed top-0 left-0 bg-white w-full shadow h-16 z-40 pr-4 pl-1">
         {/* left section */}
         <div className="mr-auto">
           <div className="w-28">
-            <NavLink to="/">
+            <NavLink to="/" onClick={handleDropDown}>
               <img src={logo} alt="Logo Image" />
             </NavLink>
           </div>
@@ -71,11 +71,11 @@ function NavBar() {
           <button className="cursor-pointer" onClick={handleDropDown}>
             <img className="sm:hidden w-8" src={menu} alt="Dropdown Menu" />
           </button>
-          <NavLink to="/login">
+          <NavLink to="/login" onClick={handleDropDown}>
             <img className="w-8" src={person} alt="Login Page" />
           </NavLink>
 
-          <NavLink to="/cart" className="relative">
+          <NavLink to="/cart" className="relative" onClick={handleDropDown}>
             <img className="w-8" src={bag} alt="Cart" />
             {cartQuantity > 0 && (
               <div className="text-xs font-bold absolute top-4 right-3 bg-red-600 w-6 h-6 text-white flex justify-center items-center rounded-[50%]">
