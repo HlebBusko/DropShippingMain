@@ -27,7 +27,7 @@ function StickerSwiper({ swiperFields }) {
         {swiperFields.map((field, i) => (
           <SwiperSlide key={i}>
             <div className="flex justify-center items-center gap-1  pt-2 pb-5">
-              <img src={field.img} alt="" />
+              <img src={field.img} alt="Field Image" />
               <h1 className="text-white text-sm">{field.title}</h1>
             </div>
           </SwiperSlide>

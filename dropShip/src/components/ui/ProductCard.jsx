@@ -17,6 +17,7 @@ function ProductCard({ product }) {
             src={mainImage}
             className="w-full h-full max-w-[316px]"
             alt="Product Image"
+            loading="lazy"
           />
         </div>
         <div className="h-12">{product.title}</div>

@@ -23,7 +23,12 @@ function CartCard({ item }) {
       {/*  */}
       <div className="flex items-center gap-4">
         <div className="">
-          <img className="h-56 lg:h-80" src={item.images[0]} alt="" />
+          <img
+            className="h-56 lg:h-80"
+            src={item.images[0]}
+            alt="Cart Item Image"
+            loading="lazy"
+          />
         </div>
         {/*  */}
         <div className="flex flex-col gap-6">

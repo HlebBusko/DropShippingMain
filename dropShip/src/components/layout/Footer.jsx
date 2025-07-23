@@ -39,8 +39,16 @@ function Footer() {
         <div>
           <h1 className="font-semibold">Connect with us</h1>
           <div className="flex">
-            <img className="w-10 cursor-pointer" src={facebookIcon} alt="" />
-            <img className="w-11 cursor-pointer" src={instagramIcon} alt="" />
+            <img
+              className="w-10 cursor-pointer"
+              src={facebookIcon}
+              alt="Facebook Link"
+            />
+            <img
+              className="w-11 cursor-pointer"
+              src={instagramIcon}
+              alt="Instagram Link"
+            />
           </div>
         </div>
       </div>
@@ -54,7 +62,7 @@ function Footer() {
                 key={link.id}
                 className="flex py-1 hover:bg-gray-200 cursor-pointer"
               >
-                <img src={link.img} alt="" />
+                <img src={link.img} alt="Link Image" />
                 <h2>{link.title}</h2>
               </div>
             ))}

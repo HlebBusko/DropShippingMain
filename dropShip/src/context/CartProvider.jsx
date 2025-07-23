@@ -3,9 +3,15 @@ import { useState, useEffect } from "react";
 
 function CartProvider({ children }) {
   const [displayConfirm, setDisplayConfirm] = useState({});
-  const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem("cart")) || []
-  );
+  const getInitialCart = () => {
+    try {
+      const saved = localStorage.getItem("cart");
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  };
+  const [cart, setCart] = useState(getInitialCart);
   const [cartQuantity, setCartQuantity] = useState(0);
 
   function addToCart(product) {

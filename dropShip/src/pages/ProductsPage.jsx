@@ -46,25 +46,28 @@ function ProductsPage() {
   }
   return (
     <div className="px-4 pt-18">
-      <div className="w-full flex my-2">
-        <input
-          type="search"
-          onChange={(e) => handleSearch(e)}
-          value={searchValue}
-          className="border py-2 px-4 rounded-xl focus:border-blue-500"
-          placeholder="Search"
-        />
-        <select
-          className="border ml-auto py-2 px-4 rounded-xl"
-          onChange={(e) => handleSortValue(e)}
-        >
-          <option value="/" disabled hidden>
-            Sort by
-          </option>
-          <option value="relevance">Relevance</option>
-          <option value="highest">Price from highest to lowest</option>
-          <option value="lowest">Price from lowest to highest</option>
-        </select>
+      <div className="w-full flex mt-2 mb-4">
+        <div>
+          <h1 className="text-lg mb-1">Find product:</h1>
+          <input
+            type="search"
+            onChange={(e) => handleSearch(e)}
+            value={searchValue}
+            className="border h-11 px-4 rounded-xl focus:border-blue-500"
+            placeholder="Search"
+          />
+        </div>
+        <div className="ml-auto">
+          <div className="text-lg mb-1">Sort by:</div>
+          <select
+            className="border h-11 px-4 rounded-xl"
+            onChange={(e) => handleSortValue(e)}
+          >
+            <option value="relevance">Relevance</option>
+            <option value="highest">Price from highest to lowest</option>
+            <option value="lowest">Price from lowest to highest</option>
+          </select>
+        </div>
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(270px,1fr))] gap-4 lg:gap-4 ">
         {sortedProducts.map((product) => (

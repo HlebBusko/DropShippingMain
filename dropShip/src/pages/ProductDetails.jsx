@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import products from "../data/Products.js";
 import { CartContext } from "../context/CartContext.jsx";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,6 +16,7 @@ import SizeBox from "../components/ui/sizeBox.jsx";
 
 function ProductDetails() {
   const { id } = useParams();
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const { addToCart } = useContext(CartContext);
 
@@ -23,6 +24,17 @@ function ProductDetails() {
   const womenSizes = [30, 32, 34, 36, 38, 40, 42];
   const kidsSizes = ["2-3", "4-5", "6-7", "8-9", "9-10"];
   const equipmentSize = ["Fits all sizes"];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (!products || products.length === 0) {
     return <div>Loading products...</div>;
@@ -33,34 +45,43 @@ function ProductDetails() {
     addToCart(clickedProduct);
     toast.success("Product added to cart!");
   }
+
   return (
     <div className="pt-20 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-6">
       <div>
         <div className="hidden md:grid items-center justify-center md:grid-cols-1 lg:grid-cols-2 gap-2">
           {clickedProduct.images.map((img, i) => (
             <div className="w-full flex flex-col" key={i}>
-              <img className="object-contain" src={img} alt="Product Image" />
+              <img
+                className="object-contain"
+                src={img}
+                alt="Product Image"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
-        <div className="md:hidden">
-          <Swiper
-            className="w-full"
-            modules={[Navigation, Pagination]}
-            spaceBetween={20}
-            navigation
-            pagination={{ clickable: true }}
-            loop={true}
-          >
-            {clickedProduct.images.map((img, i) => (
-              <SwiperSlide key={i}>
-                <div className="flex items-center justify-center">
-                  <img src={img} alt="Product Image" />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        {isDesktop && (
+          <div>
+            <Swiper
+              className="w-full md:hidden"
+              modules={[Navigation, Pagination]}
+              slidesPerView={1}
+              spaceBetween={20}
+              navigation
+              pagination={{ clickable: true }}
+              loop={true}
+            >
+              {clickedProduct.images.map((img, i) => (
+                <SwiperSlide key={i}>
+                  <div className="flex items-center justify-center">
+                    <img src={img} alt="Product Image" loading="lazy" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col gap-4">

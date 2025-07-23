@@ -136,7 +136,7 @@ function Register() {
       <div>
         <div className={`min-h-6 w-86 text-left text-green-500`}>
           <div className={`flex gap-1 ${isSubmitted ? "block" : "hidden"}`}>
-            <img src={checkmarkGreen} alt="" />
+            <img src={checkmarkGreen} alt="Submit confirmation" />
             <div>Succesfully submitted</div>
           </div>
         </div>

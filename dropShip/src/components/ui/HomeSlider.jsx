@@ -45,8 +45,9 @@ function HomeSlider() {
             >
               <img
                 src={product.images[0]}
-                alt=""
+                alt="Product image"
                 className="w-full object-cover"
+                loading="lazy"
               />
 
               <h1>{product.title}</h1>
