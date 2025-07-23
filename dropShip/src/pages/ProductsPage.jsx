@@ -6,18 +6,23 @@ import { useDebounce } from "../components/UseDebounceHook.jsx";
 import SearchAndFilter from "../components/ui/SearchAndFilter.jsx";
 
 function ProductsPage() {
-  const { category } = useParams();
+  const { category, dealType } = useParams();
+  const productType = category || dealType;
   const [searchValue, setSearchValue] = useState("");
   const [sortValue, setSortValue] = useState("");
 
   const debouncedSearchValue = useDebounce(searchValue, 300);
 
-  const filteredProducts = products.filter(
-    (product) =>
-      product.category === category &&
-      product.title
-        .toLocaleLowerCase()
-        .includes(debouncedSearchValue.toLocaleLowerCase())
+  const filteredProducts = products.filter((product) =>
+    productType === category
+      ? product.category === category &&
+        product.title
+          .toLocaleLowerCase()
+          .includes(debouncedSearchValue.toLocaleLowerCase())
+      : product.new &&
+        product.title
+          .toLocaleLowerCase()
+          .includes(debouncedSearchValue.toLocaleLowerCase())
   );
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {

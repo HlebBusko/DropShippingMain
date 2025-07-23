@@ -134,14 +134,17 @@ function Register() {
         ))}
       </div>
       <div>
-        <div className={`min-h-6 w-86 text-left text-green-500`}>
+        <div className={`min-h-6 w-76 sm:w-86 text-left text-green-500`}>
           <div className={`flex gap-1 ${isSubmitted ? "block" : "hidden"}`}>
             <img src={checkmarkGreen} alt="Submit confirmation" />
             <div>Succesfully submitted</div>
           </div>
         </div>
 
-        <CheckOutButton onClick={(e) => handleSubmit(e)} className={`w-87`}>
+        <CheckOutButton
+          onClick={(e) => handleSubmit(e)}
+          className={`w-76 sm:w-86`}
+        >
           Create an account
         </CheckOutButton>
       </div>

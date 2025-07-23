@@ -90,6 +90,10 @@ function Footer() {
       </div>
       <div className="border-t border-gray-300 py-6 sm:px-8 px-4">
         <p>© {new Date().getFullYear()} SwimZone. All rights reserved.</p>
+        <p className="text-sm">
+          This website is a personal project created for educational and
+          portfolio purposes only. No products are sold through this site.
+        </p>
       </div>
     </footer>
   );

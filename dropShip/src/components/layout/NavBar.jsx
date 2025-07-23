@@ -43,7 +43,7 @@ function NavBar() {
         {/* left section */}
         <div className="mr-auto">
           <div className="w-28">
-            <NavLink to="/" onClick={handleDropDown}>
+            <NavLink to="/" onClick={isDroppedDown ? handleDropDown : ""}>
               <img src={logo} alt="Logo Image" />
             </NavLink>
           </div>
@@ -71,11 +71,15 @@ function NavBar() {
           <button className="cursor-pointer" onClick={handleDropDown}>
             <img className="sm:hidden w-8" src={menu} alt="Dropdown Menu" />
           </button>
-          <NavLink to="/login" onClick={handleDropDown}>
+          <NavLink to="/login" onClick={isDroppedDown ? handleDropDown : ""}>
             <img className="w-8" src={person} alt="Login Page" />
           </NavLink>
 
-          <NavLink to="/cart" className="relative" onClick={handleDropDown}>
+          <NavLink
+            to="/cart"
+            className="relative"
+            onClick={isDroppedDown ? handleDropDown : ""}
+          >
             <img className="w-8" src={bag} alt="Cart" />
             {cartQuantity > 0 && (
               <div className="text-xs font-bold absolute top-4 right-3 bg-red-600 w-6 h-6 text-white flex justify-center items-center rounded-[50%]">

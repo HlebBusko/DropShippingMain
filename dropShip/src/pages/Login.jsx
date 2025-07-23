@@ -64,7 +64,7 @@ function Login() {
 
   return (
     <form>
-      <div className="pt-19 flex flex-col items-center pb-6 bg-gray-100 ">
+      <div className="pt-19 flex flex-col items-center pb-6 bg-gray-100 px-4">
         <div>
           <div className="text-center font-bold mb-2 text-lg">LOGIN</div>
           <div className="flex flex-col gap-1">
@@ -108,7 +108,7 @@ function Login() {
             </div>
           </div>
           <CheckOutButton
-            className={`w-full mt-2 shadow-lg`}
+            className={`sm:w-86 w-76 mt-2 shadow-lg`}
             type={"submit"}
             onClick={(e) => handleSubmit(e)}
           >
@@ -119,12 +119,12 @@ function Login() {
             <div className="font-semibold text-lg">NOT REGISTERED YET?</div>
             <NavLink
               to="/register"
-              className={`w-86 shadow-lg bg-blue-500 py-4 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-600 text-center`}
+              className={`sm:w-86 w-76 shadow-lg bg-blue-500 py-4 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-600 text-center`}
             >
               Register now
             </NavLink>
           </div>
-          <div className="flex flex-col w-86 items-center mt-4">
+          <div className="flex flex-col w-76 sm:w-86 items-center mt-4">
             <h1 className="text-lg font-semibold mb-2">
               What are the benefits?
             </h1>

@@ -10,9 +10,9 @@ function InputField({ field, errorData, onChange }) {
     setVisibility((prev) => !prev);
   }
   return (
-    <div key={field.id} className="flex flex-col h-21 relative">
+    <div key={field.id} className="flex flex-col h-21 relative items-center">
       <input
-        className={` p-4 shadow border-1 focus:border-1 w-86 rounded-lg focus:bg-blue-100 focus:outline-blue-800 ${
+        className={` p-4 shadow border-1 focus:border-1 w-76 sm:w-86 rounded-lg focus:bg-blue-100 focus:outline-blue-800 ${
           errorData.errors[field.name]
             ? "bg-red-200 focus:bg-red-200"
             : "bg-white"
