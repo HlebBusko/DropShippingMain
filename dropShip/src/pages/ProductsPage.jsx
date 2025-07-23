@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ProductCard from "../components/ui/productCard.jsx";
+import ProductCard from "../components/ui/ProductCard.jsx";
 import products from "../data/Products.js";
 import { useParams } from "react-router-dom";
 import { useDebounce } from "../components/UseDebounceHook.jsx";
