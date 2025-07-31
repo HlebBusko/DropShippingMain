@@ -1,4 +1,4 @@
-# 🏊 HlebStore — Arena-Inspired Dropshipping Website (React + Tailwind)
+# 🏊 SwimZone — Dropshipping Website (React + Tailwind)
 
 This is a fully responsive, modern dropshipping e-commerce website built using **React**, **Vite**, and **Tailwind CSS**. It features dynamic product rendering, category-based routing, mobile-optimized design, and global cart functionality with persistent storage — all designed to deliver a smooth, real-world online shopping experience.
 
