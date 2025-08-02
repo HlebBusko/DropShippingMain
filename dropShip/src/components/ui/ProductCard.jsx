@@ -35,7 +35,7 @@ function ProductCard({ product }) {
               e.preventDefault();
               addToCart(product);
             }}
-            className="w-full bg-blue-400 text-white py-1 rounded-lg hover:bg-blue-500 hover:shadow-lg cursor-pointer mt-auto transition-all ease-in-out duration-300"
+            className="w-full bg-blue-400 font-semibold text-white py-1 rounded-lg hover:bg-blue-500 hover:shadow-lg cursor-pointer mt-auto transition-all ease-in-out duration-300"
           >
             Add to cart
           </button>
