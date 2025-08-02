@@ -90,10 +90,10 @@ This project was built as a **portfolio-ready frontend showcase**, simulating a 
 
 > Add 3–5 screenshots inside the `assets/` folder and reference them like this:
 
-![Home Page](./public/screenshot1Desktop.png)  
-![Product Page](./public/screenshot2Desktop.png)  
-![Cart](./public/screenshot3Desktop.png)  
-![Mobile View](./public/screenshot4Mobile.jpg)
+![Home Page](./dropShip/./public/screenshot1Desktop.png)  
+![Product Page](./dropShip/./public/screenshot2Desktop.png)  
+![Cart](./dropShip/public/screenshot3Desktop.png)  
+![Mobile View](./dropShip/./public/screenshot4Mobile.jpg)
 
 ---
 
