@@ -105,5 +105,5 @@ This project reflects how I design user interfaces, manage application logic, an
 📧 **Contact**: [hleb.busko@gmail.com](mailto:hleb.busko@gmail.com)  
 📞 **Phone**: +48 796 746 210
 🌐 **Portfolio**: https://portfoliohleb.netlify.app/
-📍 Based in Warsaw, Poland  
+📍 **Based** in Warsaw, Poland  
 🗣 Fluent in English & Polish | Native Russian speaker
