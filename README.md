@@ -102,8 +102,10 @@ This project was built as a **portfolio-ready frontend showcase**, simulating a 
 I'm a **professional swimming coach** pursuing a career in **frontend development**.  
 This project reflects how I design user interfaces, manage application logic, and bring real products to life with responsive, interactive components.
 
-📧 **Contact**: [hleb.busko@gmail.com](mailto:hleb.busko@gmail.com)  
-📞 **Phone**: +48 796 746 210
-🌐 **Portfolio**: https://portfoliohleb.netlify.app/
-📍 **Based** in Warsaw, Poland  
-🗣 Fluent in English & Polish | Native Russian speaker
+## Contact me
+
+- 📧 **Email**: [hleb.busko@gmail.com](mailto:hleb.busko@gmail.com)
+- 📞 **Phone**: +48 796 746 210
+- 🌐 **Portfolio**: https://portfoliohleb.netlify.app/
+- 📍 **Based** in Warsaw, Poland
+- 🗣 Fluent in English & Polish | Native Russian speaker
