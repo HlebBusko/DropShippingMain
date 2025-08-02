@@ -68,7 +68,7 @@ Deployment: Netlify
 ## 💻 Local Setup
 
 ```bash
-git clone https://github.com/yourusername/hlebstore-dropshipping.git
+git clone https://github.com/HlebBusko/DropShippingMain.git
 cd dropShip
 npm install
 npm run dev
