@@ -143,7 +143,7 @@ function Register() {
 
         <CheckOutButton
           onClick={(e) => handleSubmit(e)}
-          className={`w-76 sm:w-86`}
+          className={`w-76 sm:w-86 transition-all ease-in-out duration-300 hover:shadow-lg`}
         >
           Create an account
         </CheckOutButton>

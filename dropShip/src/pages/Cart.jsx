@@ -30,7 +30,7 @@ function Cart() {
             <div className="">
               <div className="text-center font-bold text-xl mb-4">SUMMARY</div>
               <CartSummary></CartSummary>
-              <CheckOutButton className={`w-full hidden lg:block mt-2`}>
+              <CheckOutButton className={`w-full hidden lg:block mt-2 `}>
                 Continue to checkout
               </CheckOutButton>
             </div>

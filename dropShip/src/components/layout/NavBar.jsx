@@ -54,7 +54,7 @@ function NavBar() {
             {links.map((link) => (
               <NavItem
                 className={({ isActive }) =>
-                  `px-2 lg:px-4 hover:text-blue-500 w-full bg-white h-full flex items-center h-12 ${
+                  `px-2 lg:px-4 hover:text-blue-500 w-full bg-white h-full flex items-center h-12 transition-all duration-300 ease-in-out ${
                     isActive
                       ? "underline underline-offset-16 text-blue-500"
                       : ""

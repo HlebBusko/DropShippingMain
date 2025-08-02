@@ -103,12 +103,12 @@ function Login() {
               </label>
             </div>
 
-            <div className="underline ml-auto hover:underline-blue-500 hover:text-blue-500 cursor-pointer">
+            <div className="underline ml-auto transition-all ease-in-out duration-300 hover:underline-blue-500 hover:text-blue-500 cursor-pointer">
               Forgot Password?
             </div>
           </div>
           <CheckOutButton
-            className={`sm:w-86 w-76 mt-2 shadow-lg`}
+            className={`sm:w-86 w-76 mt-2 shadow-lg transition-all ease-in-out duration-300`}
             type={"submit"}
             onClick={(e) => handleSubmit(e)}
           >
@@ -119,7 +119,7 @@ function Login() {
             <div className="font-semibold text-lg">NOT REGISTERED YET?</div>
             <NavLink
               to="/register"
-              className={`sm:w-86 w-76 shadow-lg bg-blue-500 py-4 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-600 text-center`}
+              className={`sm:w-86 w-76 shadow-lg bg-blue-500 py-4 rounded-lg text-white font-bold cursor-pointer hover:bg-blue-600 text-center transition-all ease-in-out duration-300 hover:shadow-lg`}
             >
               Register now
             </NavLink>

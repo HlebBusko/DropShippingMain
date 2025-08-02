@@ -60,7 +60,7 @@ function Footer() {
             {footerLinks.map((link) => (
               <div
                 key={link.id}
-                className="flex py-1 hover:bg-gray-200 cursor-pointer"
+                className="flex py-1 hover:bg-gray-200 cursor-pointer transition-all ease-in-out duration-300"
               >
                 <img src={link.img} alt="Link Image" />
                 <h2>{link.title}</h2>
@@ -78,7 +78,7 @@ function Footer() {
                   `${
                     isActive
                       ? `text-blue-500`
-                      : `block w-full hover:text-blue-500`
+                      : `block w-full hover:text-blue-500 transition-all ease-in-out duration-300`
                   }`
                 }
               >
